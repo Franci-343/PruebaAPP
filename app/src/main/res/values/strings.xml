@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PruebaAPP</string>
+    <string name="datos_ingresados">Datos ingresados</string>
+    <string name="volver">Volver</string>
 </resources>

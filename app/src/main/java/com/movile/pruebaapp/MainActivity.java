@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,8 +82,12 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                String greeting = "Hola, " + firstName + " " + lastName + " (Carnet: " + carnet + ")!";
-                textGreeting.setText(greeting);
+                // Lanzar ResultActivity con los datos
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra(ResultActivity.EXTRA_FIRST_NAME, firstName);
+                intent.putExtra(ResultActivity.EXTRA_LAST_NAME, lastName);
+                intent.putExtra(ResultActivity.EXTRA_CARNET, carnet);
+                startActivity(intent);
             }
         });
     }
